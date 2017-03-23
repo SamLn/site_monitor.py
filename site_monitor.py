@@ -8,13 +8,13 @@ import time
 import smtplib
 
 #choose site
-url = "http://moodle.clevelandhighschool.org"
+url = raw_input("enter URL https:// needed: ")
 headers = {'User-Agent': 'Chrome/39.0.2171.95'} 
 response = requests.get(url, headers=headers)
 #if response contains cookies
 response.cookies ['example_cookie_name']
 #send cookies to server
-url = "exampleurl"
+url = "exampleurl" 
 cookies = dict(cookies_are='working')
 
 response = requests.get(url, cookies=cookies)
