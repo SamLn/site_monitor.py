@@ -22,7 +22,8 @@ response.text
 #html parser
 Firstrun = BeautifulSoup(response.text, "html.parser")
 Lookagain = BeautifulSoup(response.text, "html.parser")
-	
+x = int(input("Enter a Number:" ))
+
 while True:
 #if no change
 	if str(Firstrun) == str(Lookagain):
@@ -31,7 +32,7 @@ while True:
 		#looks into site again
 		Lookagain = BeautifulSoup(response.text, "html.parser")
 		#wait until redo
-		time.sleep(2)
+		time.sleep(x)
 #if change, send e-mail
 	else:
 		server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -46,5 +47,21 @@ while True:
 		
 		server.sendmail(From, To, Msg)
 		server.quit()
-		
+		#assign the changed string to the base string for loop
+		Firstrun = Lookagain
+		#Gives user the opportunity to get out of loop
+		exit_or_no(i)
+			
+i = input("Do you want to quit?:")
+
+def exit_or_no(i):
+	if i == "Y":
+		#If user types in Y, then program ends
 		break
+		
+	else:
+		#I think this means do nothing?
+		null()
+		
+		
+
