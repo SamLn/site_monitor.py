@@ -8,3 +8,6 @@ p.s. I hope this works"
 
 -End loop option by Sam Wagner; accepted because the user could want to end the program
 "I gave the user the option to end the loop. However, I used my patchy python skills, so it might not work."
+
+My changes accepted:
+-Cookies for Liam
